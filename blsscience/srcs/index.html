@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BLS Science</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            background-image: linear-gradient(to bottom, #202125, #1e1e22, #1c1c1e, #19191b, #171718, #171718, #171718, #171718, #1a1a1b, #1d1d1e, #212122, #242425);
+        }
+        
+        .logo {
+            cursor: pointer;
+        }
+        
+        .nav__links a,
+        .cta,
+        .overlay__content a {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            color: #edf0f1;
+            text-decoration: none;
+        }
+        
+        .nav__links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav__links li {
+            padding: 10px 40px;
+            font-size: 2.0rem;
+        }
+        
+        .nav__links li a {
+            transition: color 0.3s ease 0s;
+        }
+        
+        .nav__links li a:hover {
+            color: blue
+        }
+        
+        .cta {
+            padding: 9px 25px;
+            background-image: linear-gradient(to bottom, #252de0, #2130e0, #1d32e1, #1935e1, #1437e1, #1238e2, #1039e3, #0d3ae4, #0e3ae7, #0f39e9, #1039ec, #1138ee);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease 0s;
+        }
+        
+        .cta:hover {
+            background-image: (#202125, #1e1e22, #1c1c1e, #19191b, #171718, #171718, #171718, #171718, #1a1a1b, #1d1d1e, #212122, #242425);
+            ;
+        }
+        /* Mobile Nav */
+        
+        .menu {
+            display: none;
+        }
+        
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            overflow-x: hidden;
+            transition: width 0.5s ease 0s;
+        }
+        
+        .overlay--active {
+            width: 100%;
+        }
+        
+        .overlay__content {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-video: ;
+        }
+        
+        .overlay a {
+            padding: 15px;
+            font-size: 36px;
+            display: block;
+            transition: color 0.3s ease 0s;
+        }
+        
+        .overlay a:hover,
+        .overlay a:focus {
+            color: red;
+        }
+        
+        .overlay .close {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            color: (#202125, #1e1e22, #1c1c1e, #19191b, #171718, #171718, #171718, #171718, #1a1a1b, #1d1d1e, #212122, #242425);
+        }
+        
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px;
+            }
+            .overlay .close {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+        
+        @media only screen and (max-width: 800px) {
+            .nav__links,
+            .cta {
+                display: none;
+            }
+            .menu {
+                display: initial;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="/"><img src="https://d2u4k5py4s2kwe.cloudfront.net/uploads/venue_seo/og_image/46/logo_redraw_blue.png" alt="logo" height="100px" width="100px"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chemistry</a></li>
+                <li><a href="#">Biology</a></li>
+                <li><a href="#">Physics</a></li>
+                <li><a href="#">Revision Tips</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="#">Made by Ashan Jeevanathan</a>
+        <p class="menu cta">Menu</p>
+
+    </header>
+    <div class="overlay">
+        <a class="close">&times;</a>
+
+        <div class="overlay__content">
+            <a href="#">Chemistry</a>
+            <a href="#">Biology</a>
+            <a href="#">Physics</a>
+            <a href="#">Revsion Tips</a>
+
+        </div>
+
+        <div>
+
+        </div>
+
+        <script>
+            const doc = document;
+            const menuOpen = doc.querySelector(".menu");
+            const menuClose = doc.querySelector(".close");
+            const overlay = doc.querySelector(".overlay");
+
+            menuOpen.addEventListener("click", () => {
+                overlay.classList.add("overlay--active");
+            });
+
+            menuClose.addEventListener("click", () => {
+                overlay.classList.remove("overlay--active");
+            });
+        </script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+</html>
